@@ -1,0 +1,150 @@
+-Monero Operation Security Guide v2 by /u/Unkn8wn69
+
+Hey guys, today I wanted to talk a bit about Monero Operation security, cause many people think that this is completely useless in monero, but it isn't. Monero Opsec should be treated like any other coin that doesn't have the security and anonymity features like monero.
+
+Many things have to be considered when operating monero in a severe threat model and to be as Anonymous, secure, and Private
+as possible. In this guide are many steps Mentioned but it's not required to have all of these fields marked to have a decent amount of security.
+
+We will begin with talking about one of the most important things...
+
+What operating system should I use when securely sending and receiving funds in monero?
+
+--Operating systems--
+
+First of all, I would advise anyone who cares about their privacy or Security, don't use proprietary Malware like Windows or OSX for handling Crypto. For best Opsec an OS like Whonix, or even better Tails, should be used. For Installing Tails and Whonix, I will link the Guides in the Description.
+
+For those who don't know what tails is, I'm gonna briefly explain it to ya, Tails is an Operating system based on Debian which is built with a constant non-stop connection to the Tor network, which means all connections that are going out from your machine are going through the Tor network and those who don't, will just get blocked, also Tails is no OS that you can't install as a persistent system on something like an SSD, but you use it as a Live OS on a USB stick. For the best security, I advise only use it on a crap Laptop without an internal Harddrive to make it impossible that any data can even be collected from a Rootkit for example.
+
+For the next topic, I want to talk about something where many people do the mistake of using proprietary or scam Wallets.
+
+--Wallets--
+
+The only wallets I would advise someone to use, are the Offical GUI and CLI wallets that can be downloaded on the getmonero.org page. Remember that it is NOT A GOOD IDEA to visit this page in the Tor browser, cause over 25% of the Tor-Exit-Nodes are compromised and you can get a wrong download when using the clear-web page with tor-browser, cause a bad actor could intercept your traffic. So only visit the .onion mirror of it when using tor!
+
+Another good Wallet is the Featherwallet which can be found on featherwallet.org and which is operated by the xmr-guide owner,
+featherwallet is aiming to provide a similar interface like the Electrum Bitcoin wallet and automatically fetches a list of trusted tor-hosted remote Monero Nodes and has an integrated exchange which is provided by localmonero.
+
+If you still want to use a mobile wallet, even tho they are generally less secure, I would recommend using the Cakewallet or the Monerujo wallet for Android. I will link all resources in the description.
+
+--Nodes--
+
+I'm going to talk a bit about nodes now, in general, it's mostly okay to just use a recommended onion node from the xmrguide remote-node list but for the paranoid guys, I would recommend either running a local node or if you have an SSD and a raspberry pi laying around or a rented VPS, you can also host your own private remote node! I will make a Tutorial regarding this soon. I will link another nice Guide for this in the description as well.
+
+The simplest and most secure way to use remote nodes is getting them from the list from the xmrguide onion site which is also in the description and available on dark.fail. 
+
+1. Go over to the remote-nodes page and grab the address on the top
+2. Open your GUI wallet and go into the settings and then under Node
+3. choose a remote node. 
+4. Now put in the desired address and port. 
+5. Mark the Daemon as trusted and click on Ok.
+
+If you are under an Operating system that doesn't route all your traffic through tor, you also have to configure the tor proxy within the wallet. On tails or Whonix this is already made automatically by the Operating System, if you don't use one of these you have to go through the following steps:
+
+1. Start an instance of the Tor browser and then open your wallet.
+2. Go to the Settings and Under Interface check the checkbox for Socks5 Proxy
+3. Fill in 127.0.0.1 in the IP-Adress Bar and 9050 under Port.
+4. Now you can do the steps from before and connect to your onion remote node.
+
+After this, you are set and you can let your wallet sync!
+
+--subaddresses--
+
+Subadresses are very important to always think about. Subaddresses are sub-wallets that are generated from your main wallet that begins with 4..., all subaddresses begin with 8.. and I will show you now where to create them.
+
+1. First you will head over to your Monero GUI wallet and go to the Accounts tab
+2. You will see a list, where the first account (#0) the Primary address is.
+3. Go and create a subaddress by clicking on "Create new account" and setting a Label of your favor.
+
+I would recommend for transactions to always use a subaddress as some kind of proxy, this prevents your primary address from leaking to the internet. But for Donation addresses, I would advise just use the primary one, cause this is always easily recoverable when you lost your device but still got the keys.
+
+--Buying Monero--
+
+Another step in my Guide, that is more important in non-private cryptos but is also critical in monero, is How to buy Monero securely. This can vary from Country to Country but there are some nice ways to get it securely and anonymously which should work in most!
+
+First I will talk about the so-called Peer-to-Peer exchanges, a Peer-To-Peer exchange is a platform that pretty much functions like eBay. A user can list an exchange offer like "I give you Monero for Amazon Giftcards!" and then people can buy from him. Most of these exchanges also have features for reviews and some kind of Scam prevention, so when buying from an exchange partner with many reviews you should be fine.
+
+So first, I will go over one of the most User-Friendly exchanges, Localmonero, which is available on the domain Localmonero.co, or the Tor Mirror listed on their Page. Localmonero is trusted by the community and a long-living Monero based clone of LocalBitcoins. It is not decentralized but has the most Users of all big peer2peer exchanges, so you will probably find someone to buy from in your country.
+
+Another type of Exchanges are the Decentralized ones, there is the bisq-dex which is supporting Monero but is based on Bitcoin and is so less secure, another clone of it that is focusing on Monero is haveno. Haveno is by now only a Proof of Concept but will soon release its first version.
+
+If you cant find a nice exchange partner on the above-stated platforms, I would advise you to look on bestchange.com for a reputable exchange with a lot of reviews. I bought Monero multiple times there, but keep in mind that this method may cause some KYC. 
+
+--converting xmr in Other coins--
+
+Monero is sadly not so widely accepted around the world, therefor many People need to swap it into another cryptocurrency such as Bitcoin to pay with it. I want to list some of the best Coin-Swap Services that I tried in the past. 
+
+xmr.to was the most used one before it shut down some months ago, but there are still some that are pretty practical, a link to a list for Monero exchanges and swapping services is also in the description.
+
+First, I will list some of these exchanges:
+
+onion= Stands for that the exchange has an onion mirror.
+X-Onion= Stands for that the site blocks all onion IP Addresses.
+JS= Stands for that the site may need Javascript to be enabled
+
+- Changenow.io: Change now is also the swap service that is used in the CakeWallet Mobile wallet and the page doesn't block tor addresses, it needs Javascript to be functional tho. (JS)
+
+- Xchange.me: Xchange.me is another great exchange that also has an onion mirror and doesn't need javascript. (Onion)
+
+- Sideshift.ai: Sideshift is also a very reputable exchange, it does require Javascript and blocks Tor IP Addresses. (JS|Onion)
+
+- fixedfloat.com: Fixedfloat is the best exchange when it comes to fees from my experience, it does require Javascript to be properly used. (JS)
+
+- Elude: The next exchange is Elude.in which only operates on the Tor network but has its onion address on their Clearnet page. They offer exchange between Monero, Bitcoin, and Litecoin, they also offer a Bitcoin mixing service and act as an anonymous email provider too. (Onion)
+
+--Cashing out xmr--
+
+My next topic is about ways to cash out monero most securely.
+
+First of all, just searching for an offer on exchanges like Bisq/Haveno or Localmonero is a great option cause there are also people trying to buy monero from you! When you can't find an offer just create one and you might find a good trading partner.
+
+The other way is just swapping your monero for a coin that is easier for you to cash out, like bitcoin, and do it through that.
+
+Also, it's good to make use of the subaddress feature for swapping around funds between the wallets to make your transaction history even more obfuscated, cause even tho monero is untraceable it's always better to still maintain good privacy and security practices.
+
+--Atomic Swaps--
+
+Atomic swaps is a project that allows trustless and fool-proof swaps between monero and Bitcoin, on-chain and completely decentralized. Multiple developers in different projects are working on this. COMIT are by far the ones who are the most far in this. They already made mainchain swaps and are now slowly starting to implement them in wallets such as the Monerujo wallet. It will take some more time but we will soon see this feature in our most loved wallets.
+
+Atomic swaps eliminate the constant fear of not finding a good exchange for swapping monero with other coins. This trustless exchange will make monero even freer than it already is.
+
+--Resources--
+
+Operating Systems: 
+- Tails (https://tails.boum.org/)
+- Whonix (https://www.whonix.org/)
+- Tutorial for setting up Tails Live OS (https://www.youtube.com/watch?v=8NXvsWRcSns)
+- Tutorial for setting up Whonix OS (https://www.youtube.com/watch?v=y82TgJNivOI)
+
+Wallets:
+- Official Monero GUI & CLI Wallet (https://www.getmonero.org/downloads/)
+- Featherwallet (https://featherwallet.org/download/)
+- Cakewallet (https://cakewallet.com/)
+- Monerujo (https://www.monerujo.io/)
+
+Nodes:
+- xmr-guide (http://xmrguide42y34onq.onion)
+- xmr-guide remote node list (http://xmrguide42y34onq.onion/remote_nodes)
+- dark.fail (https://dark.fail/) | (http://darkfailllnkf4vf.onion/)
+
+Monero node Guides:
+1. https://sethsimmons.me/guides/run-a-monero-node/
+2. https://www.youtube.com/watch?v=riK8t_4llXw
+
+Buying Monero:
+- Localmonero (https://localmonero.co/)
+- Bisq (https://bisq.network/)
+- Haveno (https://github.com/haveno-dex/haveno)
+- Bestchange (https://www.bestchange.com/)
+- List of Exchanges: (https://kycnot.me/)
+
+Converting XMR in other coins:
+- xmr.to (https://xmr.to/)
+- Changenow (https://changenow.io/)
+- Xchange.me (https://xchange.me/)
+- Sideshift (https://sideshift.ai/)
+- FixedFloat (https://fixedfloat.com/)
+- Elude (https://elude.in/)
+
+Atomic Swaps:
+- XMR-BTC Swaps Comit (https://github.com/comit-network/xmr-btc-swap)
+- Farcaster Project (https://github.com/farcaster-project/)
