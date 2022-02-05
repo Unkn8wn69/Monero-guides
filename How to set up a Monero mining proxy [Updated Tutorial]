@@ -1,0 +1,17 @@
+Here is a quick and simple tutorial on how to setup xmrig-proxy.I made it yesterday cause I saw many poeple struggle with setting it up.
+
+1. Download xmrig-proxy for your operating system on https://xmrig.com/download/proxy
+2. Go to [https://config.xmrig.com/proxy](https://config.xmrig.com/proxy) and go through the pages and Fill in your settings. (Easiest is just Hashvault.pro Pool)
+3. Copy the text in the field and paste it into the config.json in your xmrig-proxy folder.
+4. open start.cmd(or ./xmrig-proxy on Linux) and look out for errors
+5. if there are no errors you can now see your Hashrate by pressing "h" and your workers by pressing "w".
+
+(optional)
+
+1. For testing Download XMRig here: https://xmrig.com/download
+2. Go to https://xmrig.com/wizard and Click on "new configuration" and then on add Proxy.
+3. Fill in your xmrig-proxy hosting mashine IP (or 127.0.0.1 if localhost) and your port.
+4. Click through and copy the text into the config.json in your xmrig folder.
+5. Start xmrig.cmd (or ./xmrig on Linux)Now you should see the new workers when you press W in the terminal of the xmrig-proxy. 
+You can try to make a Panel with the API: https://xmrig.com/docs/miner/api 
+but as of today there are no offical Panels out there supporting the newest API.
