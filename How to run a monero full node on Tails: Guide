@@ -1,0 +1,67 @@
+What are the benefits of a local full node?
+
+- No sync times once the full node is synced
+- No 3rd party being able to see your transaction-IDs combined with your IP
+- Strengthening of the network (if you open/forward ports)
+- Own blockexplorer!
+
+What do I need to get started?
+
+- A tails USB stick with optionally Persistent Storage enabled. (https://tails.boum.org/install/)
+- An computer/laptop with >4GB Ram
+- An 256GB+ USB3.0 Drive/SSD/HDD
+- Boot into your host operating system and install the monero-cli wallet from getmonero.org
+- On windows just unzip the package, for linux you will have to execute the following commands:
+
+mkdir monero
+tar -xjvf linux64 -C monero
+
+3. Open the terminal in the monero directory and execute the command:
+
+./monerod --data-dir /path/to/the/drive 
+or 
+monerod.exe --data-dir /path/to/the/drive
+
+4. Now let the blockchain synchronize
+
+5. Once the blockchain is fully synced, shut down your computer and boot with the earlier created TailsOS USB stick.
+
+6. In Tails, open the terminal in your desired location and download the monero-cli-wallet with the simple command:
+
+wget https://downloads.getmonero.org/cli/linux64
+
+7. Now create a new directory and unarchive the archive with:
+
+mkdir monero 
+tar -xjvf linux64 -C monero
+
+8. cd into the directory and create a start-script with:
+
+cd monero
+nano startmonerod.sh
+
+9. Paste in the following, and replace /blockchain/directory with the path to the blockchain directory on your drive. (usually /home/USERNAME/.bitmonero on linux)
+
+#/!/bin/bash
+sudo iptables -I OUTPUT 2 -p tcp -d 127.0.0.1 -m tcp --dport 18081 -j ACCEPT
+DNS_PUBLIC=tcp TORSOCKS_ALLOW_INBOUND=1 torsocks ./monerod --p2p-bind-ip 127.0.0.1 --no-igd --rpc-bind-ip 127.0.0.1 --data-dir /blockchain/directory
+
+10. Save and exit the editor with (CTRL + O) & (CTRL X)
+
+11. Start the script
+
+sh ./startmonerod.sh
+
+12. Let the last blocks sync (~0.1 Blocks/Second)
+
+Now you're done and your local node should be synced and running.
+
+You can now open your preferred wallet and enter 127.0.0.1:18081 as your node address. I recommend using either the original CLI/GUI wallet or the featherwallet which is available on featherwallet.org.
+
+I hope you liked my small tutorial/Guide.
+
+If you still want to use a remote node, you are free to use my freshly setup onion node over:
+
+jqtj6az3gya2a4niwnfwsuek7vrihpd7d2bvanecfjn2d4zlwh4mb2qd.onion:18081
+
+If anyone has other questions feel free to message me!
